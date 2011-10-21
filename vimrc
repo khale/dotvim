@@ -7,20 +7,24 @@
 " 			pkg
 " 	SuperTab: Insert-mode tab completion
 " 	Surround: easy mappings for parens, brackets, quotes, etc
-" 	NERDTree: better file explorer
+" 	NERDTree: better file explorer, i.e. replaces :Ex and :Vex
 " 	NERDCommenter: easy mappings for commenting (',cc' etc in cmd mode to use)
 " 	CloseTag: auto-tag closing for HTML/XML
 " 	DlimitMate: autocomplete for quotes, parens, brackets, etc.
 " 	Fugitive: git integration
 "
+" Use :help <plugin-name> to find out more
+
 " set up pathogen for easy plugin installation
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 syntax enable
 set number
+" tab settings
 set tabstop=4
 set shiftwidth=4
+
 " tell Ctags to recurse up directories 
 " for the tags file
 set tags=tags;/
@@ -34,6 +38,9 @@ if &t_Co == 256
     colorscheme solarized
 endif
 
+" TODO: set up code folding
+
+" TODO: set up Tagbar to open up when in a ctagged dir
 filetype plugin on
 
 "for CloseTag extension
