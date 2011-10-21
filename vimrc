@@ -6,7 +6,8 @@
 " 	Tagbar: Taglist++, source code browsing (this requires the exuberant-ctags
 " 			pkg
 " 	SuperTab: Insert-mode tab completion
-" 	NERDTree:
+" 	Surround: easy mappings for parens, brackets, quotes, etc
+" 	NERDTree: better file explorer
 " 	NERDCommenter: easy mappings for commenting (',cc' etc in cmd mode to use)
 " 	CloseTag: auto-tag closing for HTML/XML
 " 	DlimitMate: autocomplete for quotes, parens, brackets, etc.
