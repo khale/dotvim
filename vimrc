@@ -64,6 +64,3 @@ nnoremap <leader>1 :TagbarToggle<CR>
 " TODO: make the above only happen in ctagged dirs
 "
 
-" open recent files in previous position and preserve folds
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
