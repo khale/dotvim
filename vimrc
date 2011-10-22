@@ -1,6 +1,6 @@
 " KCH vimrc 2011
 
-" assumes Vim 7.0 or greater
+" I'm using Vim 7.3, I did notice problems with 7.0
 " current list of Vim extensions I'm using
 " 	gitvim:  git integration 
 " 	Pathogen: easy modular management of plugins
@@ -39,11 +39,11 @@ if &t_Co == 256
     colorscheme solarized
 endif
 
-" uncomment to set up code folding
-"set nofoldenable     "don't fold by default
-"set foldmethod=indent   " fold on indentations
-"set foldnestmax=10   "only fold up to 10 levels
-"set foldlevel=1     " only show me first fold level
+"set up code folding
+set nofoldenable     "don't fold by default
+set foldmethod=indent   " fold on indentations
+set foldnestmax=10   "only fold up to 10 levels
+set foldlevel=1     " only show me first fold level
 
 filetype plugin on
 
@@ -58,9 +58,7 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:tagbar_usearrows = 1
 nnoremap <leader>1 :TagbarToggle<CR>
 
-
 " Uncomment this line to open Tagbar on startup
 " autocmd VimEnter * nested TagbarOpen
 " TODO: make the above only happen in ctagged dirs
 "
-
