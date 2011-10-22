@@ -20,6 +20,10 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" ================
+" GENERAL SETTINGS
+" ================
+
 syntax enable
 set number
 " tab settings
@@ -47,18 +51,27 @@ set foldlevel=1     " only show me first fold level
 
 filetype plugin on
 
-"for CloseTag extension
-autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mko source ~/.vim/bundle/closetag/plugin/closetag.vim
+" Sometimes backspace stops working, if it does, uncomment this
+" set bs=2
 
+
+" =======================
+" PLUGIN-SPECIFIC OPTIONS
+" =======================
+
+" === CloseTag ===
+" only open closetag for these files
+au FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+au FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mko source ~/.vim/bundle/closetag/plugin/closetag.vim
+
+"=== SuperTab ===
 " tell SuperTab to use vim's built-in OmniComplete
 let g:SuperTabDefaultCompletionType = "context"
 
+"=== Tagbar ===
 "make TagBar a little easier: press ',1' in command mode to bring it up
 let g:tagbar_usearrows = 1
 nnoremap <leader>1 :TagbarToggle<CR>
+" Uncomment this line to open Tagbar on startup for code files
+ au BufRead *.[ch],*.cpp,*.java,*.js,*.py,*.pl TagbarOpen
 
-" Uncomment this line to open Tagbar on startup
-" autocmd VimEnter * nested TagbarOpen
-" TODO: make the above only happen in ctagged dirs
-"
