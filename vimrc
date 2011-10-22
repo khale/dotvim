@@ -1,10 +1,11 @@
 " KCH vimrc 2011
 
+" assumes Vim 7.0 or greater
 " current list of Vim extensions I'm using
 " 	gitvim:  git integration 
 " 	Pathogen: easy modular management of plugins
-" 	Tagbar: Taglist++, source code browsing (this requires the exuberant-ctags
-" 			pkg
+" 	Tagbar: Taglist++, source code browsing (requires exuberant-ctags pkg
+" 			>=v5.5
 " 	SuperTab: Insert-mode tab completion
 " 	Surround: easy mappings for parens, brackets, quotes, etc
 " 	NERDTree: better file explorer, i.e. replaces :Ex and :Vex
@@ -38,9 +39,12 @@ if &t_Co == 256
     colorscheme solarized
 endif
 
-" TODO: set up code folding
+" set up code folding
+set nofoldenable     "don't fold by default
+set foldmethod=indent   " fold on indentations
+set foldnestmax=10   "only fold up to 10 levels
+set foldlevel=1     " only show me first fold level
 
-" TODO: set up Tagbar to open up when in a ctagged dir
 filetype plugin on
 
 "for CloseTag extension
@@ -53,3 +57,13 @@ let g:SuperTabDefaultCompletionType = "context"
 "make TagBar a little easier: press ',1' in command mode to bring it up
 let g:tagbar_usearrows = 1
 nnoremap <leader>1 :TagbarToggle<CR>
+
+
+" Uncomment this line to open Tagbar on startup
+" autocmd VimEnter * nested TagbarOpen
+" TODO: make the above only happen in ctagged dirs
+"
+
+" open recent files in previous position and preserve folds
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
