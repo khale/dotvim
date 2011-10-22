@@ -9,7 +9,7 @@
 " 	SuperTab: Insert-mode tab completion
 " 	Surround: easy mappings for parens, brackets, quotes, etc
 " 	NERDTree: better file explorer, i.e. replaces :Ex and :Vex
-" 	NERDCommenter: easy mappings for commenting (',cc' etc in cmd mode to use)
+" 	NERDCommenter: easy mappings for inserting comments (',cc' etc in cmd mode to use)
 " 	CloseTag: auto-tag closing for HTML/XML
 " 	DlimitMate: autocomplete for quotes, parens, brackets, etc.
 " 	Fugitive: git integration
