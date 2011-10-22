@@ -1,3 +1,5 @@
+NOTE: As far as I know, this will only work in a Unix environment
+
 Installation:
 
 Back up your .vim folder and your .vimrc
