@@ -22,3 +22,9 @@
 [submodule "bundle/surround"]
 	path = bundle/surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "bundle/argtextobj"]
+	path = bundle/argtextobj
+	url = git://github.com/vim-scripts/argtextobj.vim.git
+[submodule "bundle/indentobj"]
+	path = bundle/indentobj
+	url = git://github.com/michaeljsmith/vim-indent-object.git

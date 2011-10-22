@@ -13,6 +13,9 @@
 " 	CloseTag: auto-tag closing for HTML/XML
 " 	DlimitMate: autocomplete for quotes, parens, brackets, etc.
 " 	Fugitive: git integration
+" 	Argtextobj: allows function arguments to be edited as vim text objects
+" 	Indenttextobj: allows text at same indent level to be edited as vim text
+" 		objects (particularly useful for, e.g., Python)
 "
 " Use :help <plugin-name> to find out more
 
