@@ -39,11 +39,11 @@ if &t_Co == 256
     colorscheme solarized
 endif
 
-" set up code folding
-set nofoldenable     "don't fold by default
-set foldmethod=indent   " fold on indentations
-set foldnestmax=10   "only fold up to 10 levels
-set foldlevel=1     " only show me first fold level
+" uncomment to set up code folding
+"set nofoldenable     "don't fold by default
+"set foldmethod=indent   " fold on indentations
+"set foldnestmax=10   "only fold up to 10 levels
+"set foldlevel=1     " only show me first fold level
 
 filetype plugin on
 
