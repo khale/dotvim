@@ -28,3 +28,18 @@
 [submodule "bundle/indentobj"]
 	path = bundle/indentobj
 	url = git://github.com/michaeljsmith/vim-indent-object.git
+[submodule "bundle/grep-vim"]
+	path = bundle/grep-vim
+	url = git://github.com/vim-scripts/grep.vim.git
+[submodule "bundle/bufexplorer"]
+	path = bundle/bufexplorer
+	url = git://github.com/markabe/bufexplorer.git
+[submodule "bundle/fuzzyfinder"]
+	path = bundle/fuzzyfinder
+	url = git://github.com/vim-scripts/FuzzyFinder.git
+[submodule "bundle/l9"]
+	path = bundle/l9
+	url = git://github.com/vim-scripts/L9.git
+[submodule "bundle/a-vim"]
+	path = bundle/a-vim
+	url = git://github.com/vim-scripts/a.vim.git
