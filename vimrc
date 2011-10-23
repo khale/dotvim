@@ -6,10 +6,11 @@
 "
 " 	Pathogen: easy modular management of plugins
 " 	Tagbar: Taglist++, source code browsing (requires exuberant-ctags pkg
-" 			>=v5.5
+" 			>=v5.5) (currently mapped to <leader>1)
 " 	SuperTab: Insert-mode tab completion
 " 	Surround: easy mappings for parens, brackets, quotes, etc
-" 	NERDTree: better file explorer, i.e. replaces :Ex and :Vex
+" 	NERDTree: better file explorer, i.e. replaces :Ex and :Vex (mapped to
+"		<leader>2)
 " 	NERDCommenter: easy mappings for inserting comments ('<leader>cc' etc in cmd mode to use)
 " 	CloseTag: auto-tag closing for HTML/XML
 " 	DlimitMate: autocomplete for quotes, parens, brackets, etc.
@@ -25,7 +26,7 @@
 "
 " Use :help <plugin-name> to find out more
 
-" set up pathogen for easy plugin installation
+" set up pathogen for easy plugin installation and mgmt
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -70,6 +71,7 @@ set softtabstop=4
 "set expandtab
 
 set encoding=utf-8
+
 " tell Ctags to recurse up directories 
 " for the tags file
 set tags=tags;/
@@ -108,7 +110,7 @@ let mapleader=","
 "nnoremap / /\v
 "vnoremap / /\v
 
-" with these, if you include capitals it'll do
+" with these, if you include capitals in a search it'll do
 " the right thing, if you just use lowercase,
 " it'll be case insensitive
 set ignorecase
