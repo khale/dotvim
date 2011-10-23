@@ -6,23 +6,27 @@
 "
 " 	Pathogen: easy modular management of plugins
 " 	Tagbar: Taglist++, source code browsing (requires exuberant-ctags pkg
-" 			>=v5.5) (currently mapped to <leader>1)
+" 	>=v5.5) (currently mapped to <leader>1)
 " 	SuperTab: Insert-mode tab completion
-" 	Surround: easy mappings for parens, brackets, quotes, etc
+" 	Surround: easy mappings for parens, brackets, quotes, etc (e.g. cs'" to
+" 	change single quotes to double quotes
 " 	NERDTree: better file explorer, i.e. replaces :Ex and :Vex (mapped to
-"		<leader>2)
+"	<leader>2)
 " 	NERDCommenter: easy mappings for inserting comments ('<leader>cc' etc in cmd mode to use)
 " 	CloseTag: auto-tag closing for HTML/XML
 " 	DlimitMate: autocomplete for quotes, parens, brackets, etc.
 " 	Fugitive: git integration (e.g. :Gstatus)
 " 	Argtextobj: allows function arguments to be edited as vim text objects
 " 	Indenttextobj: allows text at same indent level to be edited as vim text
-" 		objects (particularly useful for, e.g., Python)
+" 	objects (particularly useful for, e.g., Python)
 " 	Grepvim: grep integration (use :Grep, among other things)
 " 	Bufexplorer: easy buffer navigation (just use <leader>be)
 " 	FuzzyFinder: search files, buffers, tags etc. (e.g. <leader>ff)
-"		-> L9lib: required for FuF
-"   Avim: quickly change between source and header files (:A, :AS, :AV)
+"	-> L9lib: required for FuF
+"   Avim: quickly change between source and header files (:A, :AS, :AV) doesn't
+"   seem to be able to find h files in different dirs though
+"   VimLaTeX: rich set of tools for editing LaTex
+"
 "
 " Use :help <plugin-name> to find out more
 
