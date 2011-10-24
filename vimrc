@@ -174,6 +174,12 @@ filetype plugin on
 " make backspace smarter
 set backspace=indent,eol,start
 
+" key mappings for spell checker (apparently this will do the right thing in
+" source files. Use zg to whitelist a word
+nnoremap <leader>sp :setlocal spell spellang=en_us<CR>
+nnoremap <leader>nsp :setlocal nospell<CR>
+
+
 " Tell vim to remember certain things when we exit
 " "  '10  :  marks will be remembered for up to 10 previously edited files
 " "  "100 :  will save up to 100 lines for each register
