@@ -171,8 +171,8 @@ filetype plugin on
 " save buffers when we move away from vim
 "au FocusLost * :wa
 
-" Sometimes backspace stops working, if it does, uncomment this
-" set bs=2
+" make backspace smarter
+set backspace=indent,eol,start
 
 " Tell vim to remember certain things when we exit
 " "  '10  :  marks will be remembered for up to 10 previously edited files
