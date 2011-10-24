@@ -28,7 +28,8 @@
 "   VimLaTeX: rich set of tools for editing LaTex
 "   AutoloadCscope: forces Cscope to recurse up parent dirs to find the
 	"   database (build db with cscope -R -b, add -q to build inverted index for
-	"   quicker lookups)
+	"   quicker lookups, add -k when doing kernel/lib hacking to tell cscope to
+	"   ignore /usr/include)
 "
 "
 " Use :help <plugin-name> to find out more
