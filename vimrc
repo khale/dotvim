@@ -241,15 +241,15 @@ nnoremap <leader>sp :setlocal spell! spellang=en_us<CR>
 
 
 " let me edit my vimrc quickly with ,ev
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<CR>
 " autoreload vimrc when it's edited
 autocmd! bufwritepost vimrc source ~/.vim/vimrc
+" quickly reload vimrc
+nnoremap <leader>rv :source $MYVIMRC<CR>
 
 " quicker than reaching for escape
 inoremap jj <ESC>
 
-" quicker save
-nnoremap <leader>w :w<CR>
 
 " sudo save
 cnoremap w!! w !sudo tee % > /dev/null
