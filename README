@@ -1,4 +1,8 @@
 NOTE: As far as I know, this will only work in a Unix environment
+You probably want to have Vim compiled with cscope (Python and Perl 
+would be good to have as well). If you have access to the src, you can
+rebuild Vim with these by running the config script with the --enable-cscope
+etc. options and running make.
 
 Installation:
 
@@ -11,7 +15,7 @@ Clone the repo:
 
     git clone git://github.com/khale/dotvim.git ~/.vim
 
-Create symlink:
+Create symlink from $HOME to the vimrc in the repo
 
     ln -s ~/.vim/vimrc ~/.vimrc
 
