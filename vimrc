@@ -30,6 +30,7 @@
 	"   database (build db with cscope -R -b, add -q to build inverted index for
 	"   quicker lookups, add -k when doing kernel/lib hacking to tell cscope to
 	"   ignore /usr/include)
+"	SnipMate: great for auto-completion of common tags,func templates etc
 "
 "
 " Use :help <plugin-name> to find out more

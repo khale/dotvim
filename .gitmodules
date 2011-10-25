@@ -49,3 +49,6 @@
 [submodule "bundle/autoload-cscope"]
 	path = bundle/autoload-cscope
 	url = git://github.com/vim-scripts/autoload_cscope.vim.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = git://github.com/msanders/snipmate.vim.git
