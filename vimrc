@@ -225,12 +225,14 @@ nnoremap j gj
 nnoremap k gk
 
 " use arrow keys to switch btw buffers
-map <right> :bn<CR>
-map <left>  :bp<CR>
+nnoremap <right> :bn<CR>
+nnoremap <left>  :bp<CR>
+inoremap <right> :bn<CR>
+inoremap <left>  :bp<CR>
 
-" quick window split with ,w[vh] (vertical, horizontal)
-nnoremap <leader>wv <C-w>v<C-w>l
-nnoremap <leader>wh <C-w>s<C-w>j
+" quick window split with ,s[vh] (vertical, horizontal)
+nnoremap <leader>sv <C-w>v<C-w>l
+nnoremap <leader>sh <C-w>s<C-w>j
 
 " move around splits faster
 nnoremap <C-h> <C-w>h
@@ -254,6 +256,8 @@ nnoremap <leader>rv :source $MYVIMRC<CR>
 " quicker than reaching for escape
 inoremap jj <ESC>
 
+" quick save
+nnoremap <leader>w :w<CR>
 
 " sudo save
 cnoremap w!! w !sudo tee % > /dev/null
