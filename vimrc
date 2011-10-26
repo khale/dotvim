@@ -99,6 +99,10 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+" avoid that damn "no write since last change" warning when
+" switching buffers
+set hidden
+
 set encoding=utf-8
 set shell=/bin/zsh
 
