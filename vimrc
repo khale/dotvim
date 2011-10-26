@@ -235,10 +235,10 @@ nnoremap <leader>sv <C-w>v<C-w>l
 nnoremap <leader>sh <C-w>s<C-w>j
 
 " move around splits faster
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <C-H> <C-w>h
+nnoremap <C-J> <C-w>j
+nnoremap <C-K> <C-w>k
+nnoremap <C-L> <C-w>l
 
 
 " key mapping to toggle spell checker (apparently this will do the right thing in
