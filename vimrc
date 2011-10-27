@@ -25,7 +25,6 @@
 	"	-> L9lib: required for FuF
 "   Avim: quickly change between source and header files (:A, :AS, :AV) doesn't
 	"   seem to be able to find h files in different dirs though
-"   VimLaTeX: rich set of tools for editing LaTex
 "   AutoloadCscope: forces Cscope to recurse up parent dirs to find the
 	"   database (build db with cscope -R -b, add -q to build inverted index for
 	"   quicker lookups, add -k when doing kernel/lib hacking to tell cscope to
@@ -227,18 +226,18 @@ nnoremap k gk
 " use arrow keys to switch btw buffers
 nnoremap <right> :bn<CR>
 nnoremap <left>  :bp<CR>
-inoremap <right> :bn<CR>
-inoremap <left>  :bp<CR>
+inoremap <right> <ESC>:bn<CR>
+inoremap <left>  <ESC>:bp<CR>
 
 " quick window split with ,s[vh] (vertical, horizontal)
 nnoremap <leader>sv <C-w>v<C-w>l
 nnoremap <leader>sh <C-w>s<C-w>j
 
 " move around splits faster
-nnoremap <C-H> <C-w>h
-nnoremap <C-J> <C-w>j
-nnoremap <C-K> <C-w>k
-nnoremap <C-L> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 
 " key mapping to toggle spell checker (apparently this will do the right thing in
