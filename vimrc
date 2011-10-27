@@ -242,7 +242,7 @@ nnoremap <C-l> <C-w>l
 
 " key mapping to toggle spell checker (apparently this will do the right thing in
 " source files. Use zg to whitelist a word
-nnoremap <leader>sp :setlocal spell! spellang=en_us<CR>
+nnoremap <leader>sp :setlocal spell!<CR>
 
 
 " let me edit my vimrc quickly with ,ev
