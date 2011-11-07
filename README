@@ -8,8 +8,8 @@ Installation:
 
 Back up your .vim folder and your .vimrc
 
-	mov .vimrc .vimrc.old 
-	mov .vim .vim.old
+	mv .vimrc .vimrc.old 
+	mv .vim .vim.old
 
 Clone the repo:
 
@@ -39,3 +39,18 @@ Upgrade a particular plugin bundle
 Upgrade all bundled plugins
 	git submodule foreach git pull origin master
 
+---------------------------------------------------------
+
+Remove a particular plugin bundle
+
+    cd ~/.vim
+    remove the appropriate lines in .gitmodules
+
+    likewise for ~/.vim/.git/config
+
+    git rm --cached ~/.vim/bundle/<plugin-name>
+
+    rm -rf ~/.vim/bundle/<plugin-name>
+
+    This will keep Git from rebuilding the plugin directory
+    after you've deleted it.
