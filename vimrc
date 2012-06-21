@@ -14,7 +14,6 @@
 	"	<leader>2)
 " 	NERDCommenter: easy mappings for inserting comments ('<leader>cc' etc in cmd mode to use)
 " 	CloseTag: auto-tag closing for HTML/XML
-" 	DlimitMate: autocomplete for quotes, parens, brackets, etc.
 " 	Fugitive: git integration (e.g. :Gstatus)
 " 	Argtextobj: allows function arguments to be edited as vim text objects
 " 	Indenttextobj: allows text at same indent level to be edited as vim text
