@@ -72,8 +72,8 @@ set novisualbell
 " save my undo history for this buff along with the file
 " could save some headaches
 " the // causes fully qualified path to be in the swp name
-set undofile
-set undodir=~/.vim/tmp/undo//,~/.tmp//,/tmp//
+" set undofile
+" set undodir=~/.vim/tmp/undo//,~/.tmp//,/tmp//
 " max number of undos; default is 1000 on UNIX
 "set undolevels=500
 " max number of lines to save in the .un file, default is 10000
