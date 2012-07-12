@@ -32,6 +32,10 @@
 "
 "
 " Use :help <plugin-name> to find out more
+"
+" Note, most of my formatting options are to reflect Linux kernel coding
+" styles
+"
 
 " set up pathogen for easy plugin installation and mgmt
 call pathogen#runtime_append_all_bundles()
@@ -91,10 +95,10 @@ set cmdheight=2
 " always give me at least 3 lines before and after cursor
 set scrolloff=3
 
-" tab settings
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+" tab settings 
+set tabstop=8
+set shiftwidth=8
+set softtabstop=8
 set expandtab
 
 " avoid that damn "no write since last change" warning when
@@ -155,10 +159,12 @@ nnoremap <leader><space> :noh<CR>
 
 " line wrapping
 set wrap
-set textwidth=79
-set formatoptions=qrtn1
+"set textwidth=79
+set formatoptions=qrn1 " use t for textwidth option
+
 " tell me when i'm running on too long
-"set colorcolumn=85
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 "set up code folding
 set nofoldenable     "don't fold by default
