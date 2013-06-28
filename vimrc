@@ -179,6 +179,13 @@ set foldnestmax=10   "only fold up to 10 levels
 set foldlevel=1     " only show me first fold level
 
 
+nnoremap j gj
+nnoremap k gk
+nnoremap <right> :bn<CR>
+nnoremap <left>  :bp<CR>
+inoremap <right> <ESC>:bn<CR>
+inoremap <left>  <ESC>:bp<CR>
+
 " save buffers when we move away from vim
 "au FocusLost * :wa
 
@@ -226,8 +233,8 @@ let mapleader=","
 "vnoremap / /\v
 
 " use Tab instead of '%' to match bracket pairs
-nnoremap <tab> %
-vnoremap <tab> %
+"nnoremap <tab> %
+"vnoremap <tab> %
 
 " quick window split with ,s[vh] (vertical, horizontal)
 nnoremap <leader>sv <C-w>v<C-w>l
