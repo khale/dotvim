@@ -380,3 +380,23 @@ au Syntax * RainbowParenthesesLoadBraces
 
 "=== CTRLP ===
 let g:ctrlp_cmd = "CtrlPBuffer"
+
+" If you use Build, this will recurse back to find either .config
+" or configure.ac, and use the Makefile in whichever directory it's found
+fun! SetMkfile()
+    let cfg = ".config" " for kernels
+    let cac = "configure.ac" " for other large projects
+    let pathmk = "./"
+    let depth = 1
+    while depth < 6
+        if filereadable(pathmk . cfg) | filereadable(pathmk . cac)
+            return pathmk
+        endif
+        let depth += 1
+        let pathmk = "../" . pathmk
+    endwhile
+    return "."
+endf
+
+command! -nargs=* Build tabnew | let $mkpath = SetMkfile() | Make <args> -C $mkpath
+nnoremap <Leader>b :Build<CR>
