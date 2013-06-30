@@ -93,8 +93,6 @@ set novisualbell
 " save my undo history for this buff along with the file
 " could save some headaches
 " the // causes fully qualified path to be in the swp name
-set undofile
-set undodir=~/.vim/tmp/undo//,~/.tmp//,/tmp//
 " max number of undos; default is 1000 on UNIX
 "set undolevels=500
 " max number of lines to save in the .un file, default is 10000
@@ -167,10 +165,10 @@ set hls!
 "set textwidth=80
 set formatoptions=qrtn1
 " tell me when i'm running on too long
-set colorcolumn=80
-highlight OverLength ctermbg=red 
+"set colorcolumn=80
+"highlight OverLength ctermbg=red 
 "ctermfg=white
-match OverLength /\%80v.\+/
+"match OverLength /\%80v.\+/
 
 "set up code folding
 set nofoldenable     "don't fold by default
@@ -398,5 +396,7 @@ fun! SetMkfile()
     return "."
 endf
 
+
 command! -nargs=* Build tabnew | let $mkpath = SetMkfile() | Make <args> -C $mkpath
+command! -nargs=* Clean tabnew | let $mkpath = SetMkfile() | make -C $mkpath clean
 nnoremap <Leader>b :Build<CR>
