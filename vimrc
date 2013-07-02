@@ -13,6 +13,19 @@ if !filereadable(vundle_readme)
     let iCanHazVundle=0
 endif
 
+if version >= 720
+    set colorcolumn=80
+    set undofile
+    set undodir=~/.vim/tmp/undo//,~/.tmp//,/tmp//
+    " save my undo history for this buff along with the file
+    " could save some headaches
+    " the // causes fully qualified path to be in the swp name
+    " max number of undos; default is 1000 on UNIX
+    "set undolevels=500
+    " max number of lines to save in the .un file, default is 10000
+    "set undorelad=500
+endif
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " its the vundle
@@ -90,13 +103,6 @@ set showcmd
 set noerrorbells
 set novisualbell 
 
-" save my undo history for this buff along with the file
-" could save some headaches
-" the // causes fully qualified path to be in the swp name
-" max number of undos; default is 1000 on UNIX
-"set undolevels=500
-" max number of lines to save in the .un file, default is 10000
-"set undorelad=500
 
 " where to put swp files
 set directory=~/.vim/tmp/swp//,~/.tmp//,/tmp//
@@ -165,7 +171,6 @@ set hls!
 "set textwidth=80
 set formatoptions=qrtn1
 " tell me when i'm running on too long
-"set colorcolumn=80
 "highlight OverLength ctermbg=red 
 "ctermfg=white
 "match OverLength /\%80v.\+/
@@ -324,13 +329,22 @@ endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
-imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
