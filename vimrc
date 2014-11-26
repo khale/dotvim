@@ -385,7 +385,7 @@ endif
 
 " +++++++++ CtrlP ++++++++++++++++++
 
-let g:ctrlp_cmd = "CtrlPBuffer"
+let g:ctrlp_cmd = "CtrlPMRU"
 
 " Setup some default ignores
 let g:ctrlp_custom_ignore = {
@@ -413,6 +413,7 @@ nnoremap <leader>pu :CtrlPMRU<cr>
 
 " Use dispatch to run tig if we have it
 
+" TODO: fix this to use autocmd
 if exists(":Start") 
     command! Tig :Start tig<CR>
     command! Tigit :Start tig %<CR>
