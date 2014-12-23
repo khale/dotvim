@@ -37,9 +37,10 @@ Plugin 'scrooloose/nerdcommenter.git'     " easy comments key commands
 Plugin 'majutsushi/tagbar.git'            " view defined functions in a file using ctags
 Plugin 'scrooloose/nerdtree.git'          " view file tree
 Plugin 'Shougo/neocomplete.git'           " autocompletion
+
 Plugin 'Shougo/vimproc.git'               " shell stuff
 Plugin 'Shougo/vimshell.git'              " ^
-Plugin 'Lokaltog/vim-powerline.git'       " pretty line at bottom
+Plugin 'Bling/vim-airline.git'            " pretty line at bottom
 Plugin 'kien/ctrlp.vim.git'               " a fuzzy finder
 Plugin 'kien/rainbow_parentheses.vim.git' " visual parens
 Plugin 'tpope/vim-dispatch.git'           " for building asynchronously w/tmux etc (:Make, :Dispatch, and :Copen)
@@ -72,8 +73,11 @@ endif
 syntax enable
 
 set bg=dark
-"let g:Powerline_symbols = 'compatible' 
-let g:Powerline_symbols = 'fancy'
+"let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_theme = "dark"
+
 
 " Terminal 256 colors
 " set t_Co=256
@@ -334,7 +338,7 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
-" Define dictionary.
+"" Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
@@ -377,8 +381,8 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " !+++++++++ NEOCOMPLETE +++++++++!
 
