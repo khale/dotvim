@@ -48,9 +48,10 @@ Plugin 'tpope/vim-dispatch.git'           " for building asynchronously w/tmux e
 Plugin 'tpope/vim-fugitive.git'       " for Git 
 Plugin 'gregsexton/gitv.git'          " gitk for vim  (i prefer to use the Tig commands below)
 
-Plugin 'godlygeek/csapprox'           " approximations using 256 colors
-Plugin 'duythinht/vim-coffee'         " color scheme
+Plugin 'flazz/vim-colorschemes'
 
+
+colorscheme molokai
 
 
 call vundle#end()
@@ -157,11 +158,6 @@ set tags=tags;/
 " aesthetics
 set background=dark
 
-" not all terms are 256 :(
-" if &t_Co == 256
-    colorscheme coffee
-" endif
-     
 " show status line at bottom 0=never, 1=when > 1 window open
 " 2=always
 set laststatus=2
