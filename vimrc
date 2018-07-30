@@ -153,8 +153,6 @@ set lazyredraw  " don't redraw when we don't have to
 " tell Ctags to recurse up directories 
 " for the tags file
 set tags=tags;/
-" use cscope in addition to ctags
-source ~/.vim/cscope_maps.vim
 
 " aesthetics
 set background=dark
