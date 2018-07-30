@@ -409,6 +409,7 @@ let g:ctrlp_max_files = 0
 nnoremap <leader>pb :CtrlPBuffer<cr>
 nnoremap <leader>pm :CtrlPMixed<cr>
 nnoremap <leader>pu :CtrlPMRU<cr>
+nnoremap <leader>pt :CtrlPTag<cr>
 
 " !+++++++++ CtrlP ++++++++++++++++++!
 
