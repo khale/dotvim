@@ -434,29 +434,5 @@ nnoremap <leader>sh :new \| VimShell zsh<CR>
 nnoremap <leader>sv :vnew \| VimShell zsh<CR>
 nnoremap <leader>st :VimShellTab zsh<CR>
 
-" !+++++++++ VimShell ++++++++++++++++++!
 
-" ++++++++++ Dispatch ++++++++++++++++
-
-nnoremap <leader>mk :make isoimage -j8<CR>
-nnoremap <leader>scp :!make isoimage && scp nautilus.iso root@v-test-r415-8.cs.northwestern.edu:/root/kyle/<CR>
-
-function! Can_use_dispatch()
-    if exists(":Make")
-        nnoremap <leader>mk :Make isoimage -j8<CR>
-        nnoremap <leader>scp :Dispatch make isoimage && scp nautilus.iso root@v-test-r415-8.cs.northwestern.edu:/root/kyle/<CR>
-    endif
-endfunction
-
-autocmd VimEnter * call Can_use_dispatch()
-
-" !++++++++++ Dispatch ++++++++++++++++!
-
-" ++++++++ PRoject specific stuff ++++++++++++
-
-command! Qemu :VimShellInteractive --split='split | resize 10' ssh -t root@v-test-r415-8.cs.northwestern.edu 'qemu-system-x86_64 -cdrom /root/kyle/nautilus.iso -m 2048 -vnc :3 -smp 2 -serial stdio'
-
-nnoremap <leader>qm :Qemu <CR>
-
-" TODO bringup object code in a separate split
 
