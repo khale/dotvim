@@ -383,7 +383,7 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 
 " +++++++++ CtrlP ++++++++++++++++++
 
-let g:ctrlp_cmd = "CtrlPMRU"
+let g:ctrlp_cmd = "CtrlPTag"
 
 " Setup some default ignores
 let g:ctrlp_custom_ignore = {
