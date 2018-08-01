@@ -30,36 +30,28 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " this one must come first
-Plugin 'gmarik/Vundle.vim'
-
-" github repos for plugins
+Plugin 'gmarik/Vundle.vim'                " github repos for plugins
 Plugin 'scrooloose/nerdcommenter.git'     " easy comments key commands
 Plugin 'majutsushi/tagbar.git'            " view defined functions in a file using ctags
 Plugin 'scrooloose/nerdtree.git'          " view file tree
 Plugin 'Shougo/neocomplete.git'           " autocompletion
-
 Plugin 'Shougo/vimproc.git'               " shell stuff
 Plugin 'Shougo/vimshell.git'              " ^
 Plugin 'Bling/vim-airline.git'            " pretty line at bottom
 Plugin 'kien/ctrlp.vim.git'               " a fuzzy finder
 Plugin 'kien/rainbow_parentheses.vim.git' " visual parens
 Plugin 'tpope/vim-dispatch.git'           " for building asynchronously w/tmux etc (:Make, :Dispatch, and :Copen)
-
-Plugin 'tpope/vim-fugitive.git'       " for Git 
-Plugin 'gregsexton/gitv.git'          " gitk for vim  (i prefer to use the Tig commands below)
-
-Plugin 'flazz/vim-colorschemes'  " self-explanatory
-Plugin 'dyng/ctrlsf.vim' " asynch ack/ag search results
-Plugin 'terryma/vim-multiple-cursors' " Sublime-style multiple selection
-
-Plugin 'junegunn/vim-easy-align' " alignment around delimiters
-
-Plugin 'w0rp/ale' " linting
-
-Plugin 'mbbill/undotree' " visual history of undo log
-
-colorscheme molokai
-
+Plugin 'tpope/vim-fugitive.git'           " for Git
+Plugin 'gregsexton/gitv.git'              " gitk for vim  (i prefer to use the Tig commands below)
+Plugin 'flazz/vim-colorschemes'           " self-explanatory
+Plugin 'dyng/ctrlsf.vim'                  " asynch ack/ag search results
+Plugin 'terryma/vim-multiple-cursors'     " Sublime-style multiple selection
+Plugin 'junegunn/vim-easy-align'          " alignment around delimiters
+Plugin 'w0rp/ale'                         " linting
+Plugin 'mbbill/undotree'                  " visual history of undo log
+Plugin 'machakann/vim-sandwich.git'       " operator surround
+Plugin 'wellle/targets.vim'               " extended text objects
+Plugin 'lervag/vimtex'                    " latex support
 
 call vundle#end()
 
@@ -79,6 +71,8 @@ endif
 " Colors and Fonts
 """"""""""""""""""""""
 syntax enable
+
+colorscheme molokai
 
 set bg=dark
 "let g:airline_powerline_fonts = 1
@@ -302,6 +296,8 @@ let g:asmsyntax="asmx86"
 let g:haddock_browser = "/usr/bin/google-chrome"
 au Bufenter *.hs compiler ghc
 
+
+
 " =======================
 " PLUGIN-SPECIFIC OPTIONS
 " =======================
@@ -312,7 +308,12 @@ let g:tagbar_usearrows = 1
 nnoremap <leader>1 :TagbarToggle<CR>
 " Uncomment this line to open Tagbar on startup for code files
 " au BufRead *.[ch],*.cpp,*.java,*.js,*.py,*.pl TagbarOpen
+let g:tagbar_type_julia = {
+    \ 'ctagstype' : 'julia',
+    \ 'kinds'     : ['a:abstract', 'i:immutable', 't:type', 'f:function', 'm:macro']
+    \ }
 " !++++++++++ TagBar ++++++++++++!
+
 
 " ++++++++ NERDTree ++++++++++
 nnoremap <leader>2 :NERDTreeToggle<CR>
@@ -328,6 +329,7 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " +++++++ Undotree ++++++++++
 nnoremap <F5> :UndotreeToggle<cr>
+"!+++++++ Undotree ++++++++++!
 
 
 
@@ -394,19 +396,7 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 
 
 " +++++++++ CtrlP ++++++++++++++++++
-
-let g:ctrlp_cmd = "CtrlPTag"
-
-" +++++++++ CtrlSF ++++++++++++++++++
-nmap <C-F>7 <Plug>CtrlSFPrompt
-nmap <C-F>8 <Plug>CtrlSFCwordPath
-
-" +++++++++ vim-easy-align ++++++++++++++++++
-" Start interactive EasyAlign in visual mode (e.g. vipma)
-xmap ma <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. maip)
-nmap ma <Plug>(EasyAlign)
+let g:ctrlp_cmd = "CtrlP"
 
 " Setup some default ignores
 let g:ctrlp_custom_ignore = {
@@ -428,29 +418,35 @@ nnoremap <leader>pm :CtrlPMixed<cr>
 nnoremap <leader>pu :CtrlPMRU<cr>
 nnoremap <leader>pt :CtrlPTag<cr>
 
-" !+++++++++ CtrlP ++++++++++++++++++!
+"!+++++++++ CtrlP ++++++++++++++++++!
 
 
+" +++++++++ CtrlSF ++++++++++++++++++
+"
+nmap <C-F>7 <Plug>CtrlSFPrompt    " bring up search in prompt
+nmap <C-F>8 <Plug>CtrlSFCwordExec " search for thing under cursor
 
+" focus to result window immediately
+let g:ctrlsf_auto_focus = {
+            \ "at" : "done",
+            \ "duration_less_than": 1000
+            \ }
 
-" Use dispatch to run tig if we have it
+"!+++++++++ CtrlSF ++++++++++++++++++!
 
-" TODO: fix this to use autocmd
-if exists(":Start") 
-    command! Tig :Start tig<CR>
-    command! Tigit :Start tig %<CR>
-else 
-    command! Tig execute "!tig"<CR>
-    command! Tigit execute "!tig %"<CR>
-endif
+" +++++++++ vim-easy-align ++++++++++++++++++
+" Start interactive EasyAlign in visual mode (e.g. vipma)
+xmap ma <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. maip)
+nmap ma <Plug>(EasyAlign)
+"!+++++++++ vim-easy-align ++++++++++++++++++!
 
 
 " +++++++++ VimShell ++++++++++++++++++
-
 nnoremap <leader>sh :new \| VimShell zsh<CR>
 nnoremap <leader>sv :vnew \| VimShell zsh<CR>
 nnoremap <leader>st :VimShellTab zsh<CR>
-
+"!+++++++++ VimShell ++++++++++++++++++!
 
 
 
