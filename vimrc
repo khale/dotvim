@@ -48,8 +48,15 @@ Plugin 'tpope/vim-dispatch.git'           " for building asynchronously w/tmux e
 Plugin 'tpope/vim-fugitive.git'       " for Git 
 Plugin 'gregsexton/gitv.git'          " gitk for vim  (i prefer to use the Tig commands below)
 
-Plugin 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'  " self-explanatory
+Plugin 'dyng/ctrlsf.vim' " asynch ack/ag search results
+Plugin 'terryma/vim-multiple-cursors' " Sublime-style multiple selection
 
+Plugin 'junegunn/vim-easy-align' " alignment around delimiters
+
+Plugin 'w0rp/ale' " linting
+
+Plugin 'mbbill/undotree' " visual history of undo log
 
 colorscheme molokai
 
@@ -319,6 +326,11 @@ au Syntax * RainbowParenthesesLoadBraces
 " !+++++++ Rainbow Parens ++++++++++!
 
 
+" +++++++ Undotree ++++++++++
+nnoremap <F5> :UndotreeToggle<cr>
+
+
+
 " +++++++++ NEOCOMPLETE +++++++++
 
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
@@ -385,6 +397,17 @@ let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\
 
 let g:ctrlp_cmd = "CtrlPTag"
 
+" +++++++++ CtrlSF ++++++++++++++++++
+nmap <C-F>7 <Plug>CtrlSFPrompt
+nmap <C-F>8 <Plug>CtrlSFCwordPath
+
+" +++++++++ vim-easy-align ++++++++++++++++++
+" Start interactive EasyAlign in visual mode (e.g. vipma)
+xmap ma <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. maip)
+nmap ma <Plug>(EasyAlign)
+
 " Setup some default ignores
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
@@ -427,6 +450,8 @@ endif
 nnoremap <leader>sh :new \| VimShell zsh<CR>
 nnoremap <leader>sv :vnew \| VimShell zsh<CR>
 nnoremap <leader>st :VimShellTab zsh<CR>
+
+
 
 
 
