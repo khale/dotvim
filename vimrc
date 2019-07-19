@@ -23,6 +23,8 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'racer-rust/vim-racer'
+Plug 'sebastianmarkow/deoplete-rust'
 
 Plug 'scrooloose/nerdcommenter'     " easy comments key commands
 Plug 'majutsushi/tagbar'            " view defined functions in a file using ctags
@@ -37,7 +39,7 @@ Plug 'junegunn/vim-easy-align'          " alignment around delimiters
 
 call plug#end()
 
-let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 0
 
 filetype plugin indent on
 
@@ -359,4 +361,3 @@ au Syntax * RainbowParenthesesLoadBraces
 
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
-
